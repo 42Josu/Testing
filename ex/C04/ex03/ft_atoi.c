@@ -31,11 +31,11 @@ int	ft_atoi(char *str)
 			n++;
 		m++;
 	}
-	while(str[m] <= i)
+	while(m <= i)
 	{
 		if(str[m] >= '0' && str[m] <= '9')
 		{
-			k += str[m] - '0';
+			k += (str[m] - '0');
 			k *= 10;
 		}
 		else
