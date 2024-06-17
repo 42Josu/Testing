@@ -13,8 +13,8 @@
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	int n;
-	
+	int	n;
+
 	i = -1;
 	n = 0;
 	while (str[i++])
