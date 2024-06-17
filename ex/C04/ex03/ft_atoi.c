@@ -47,5 +47,5 @@ int	ft_atoi(char *str)
 	}
 	if((n % 2) != 0)
 		k *= -1;
-	return (k / 10);
+	return (k);
 }
