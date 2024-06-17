@@ -20,4 +20,6 @@ void	ft_putnbr(int nb)
 		nb /= 10;
 		write(1, &a, 1);
 	}
+	a = nb + '0';
+	write(1, &a, 1);
 }
