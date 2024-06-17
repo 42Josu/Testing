@@ -19,8 +19,12 @@ void	ft_putnbr(int nb)
 	i = 0;
 	if(nb < 0)
 	{
-		nb *= -1;
 		write(1, "-", 1);
+		if(nb == -2147483648)
+		{
+			write(1, "2", 1);
+		}
+		nb *= -1;
 	}
 	while(nb > 9)
 	{
