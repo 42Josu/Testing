@@ -22,6 +22,7 @@ void	ft_putnbr(int nb)
 		write(1, "-", 1);
 		if(nb == -2147483648)
 		{
+			nb += 2000000000;
 			write(1, "2", 1);
 		}
 		nb *= -1;
