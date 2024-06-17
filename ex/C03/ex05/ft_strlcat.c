@@ -12,22 +12,28 @@
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	n;
-	int	m;
+	unsigned int	i;
+	unsigned int	n;
+	unsigned int	m;
 
 	i = 0;
 	n = 0;
-	m = -1;
+	m = 0;
 	while (dest[i])
 		i++;
 	while (src[n])
 		n++;
 	if (i > n)
-		while (n > m++ && m <= size)
+		while (n > m && m <= size)
+		{
 			dest[i + m] = src[m];
+			m++;
+		}
 	else
-		while (i > m++ && m <= size)
+		while (i > m && m <= size)
+		{
 			dest[i + m] = src[m];
+			m++;
+		}
 	return (i + m);
 }
