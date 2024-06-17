@@ -30,9 +30,9 @@ void	ft_putnbr(int nb)
 		
 	}
 	a[i] = nb + '0';
-	while (i > 0)
+	while (i >= 0)
 	{
-		i--;
 		write(1, &a[i], 1);
+		i--;
 	}
 }
