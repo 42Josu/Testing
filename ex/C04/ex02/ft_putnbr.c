@@ -17,7 +17,7 @@ void	ft_putnbr(int nb)
 	int		i;
 	
 	i = 0;
-	if(nb > 0)
+	if(nb < 0)
 	{
 		nb *= -1;
 		write(1, "-", 1);
