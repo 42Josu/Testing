@@ -36,7 +36,8 @@ int	ft_atoi(char *str)
 		if(str[m] >= '0' && str[m] <= '9')
 		{
 			k += (str[m] - '0');
-			k *= 10;
+			if(str[m + 1] >= '0' && str[m + 1] <= '9')
+				k *= 10;
 		}
 		else
 		{
