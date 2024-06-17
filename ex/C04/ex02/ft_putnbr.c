@@ -16,6 +16,7 @@ void	ft_putnbr(int nb)
 	char	*a;
 	int		i;
 	
+	i = 0;
 	if(nb > 0)
 	{
 		nb *= -1;
