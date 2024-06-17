@@ -41,6 +41,7 @@ int	ft_atoi(char *str)
 		{
 			break;
 		}
+		m++;
 	}
 	if((n % 2) != 0)
 		k *= -1;
