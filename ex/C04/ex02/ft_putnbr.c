@@ -13,11 +13,10 @@
 
 void	ft_putnbr(int nb)
 {
-	char	*a;
+	char	a[256];
 	int		i;
 	
 	i = 0;
-	*a = '0';
 	if(nb > 0)
 	{
 		nb *= -1;
