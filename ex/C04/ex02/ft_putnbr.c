@@ -14,7 +14,7 @@
 void	ft_putnbr(int nb)
 {
 	char	*a;
-	int	i;
+	int		i;
 	
 	if(nb > 0)
 	{
@@ -32,8 +32,8 @@ void	ft_putnbr(int nb)
 	*a = nb + '0';
 	while (i > 0)
 	{
-		write(1, a, 1);
 		a--;
 		i--;
+		write(1, a, 1);
 	}
 }
