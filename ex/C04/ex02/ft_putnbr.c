@@ -23,17 +23,15 @@ void	ft_putnbr(int nb)
 	}
 	while(nb > 9)
 	{
-		*a = (nb % 10) + '0';
+		a[i] = (nb % 10) + '0';
 		nb /= 10;
-		a++;
 		i++;
 		
 	}
-	*a = nb + '0';
+	a[i] = nb + '0';
 	while (i > 0)
 	{
-		a--;
 		i--;
-		write(1, a, 1);
+		write(1, &a[i], 1);
 	}
 }
