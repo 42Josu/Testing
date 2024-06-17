@@ -16,36 +16,36 @@ int	ft_atoi(char *str)
 	int	n;
 	int	m;
 	int	k;
-
+	
 	i = 0;
 	n = 0;
 	m = 0;
 	k = 0;
-	return (tururu(i, n, m, k));
-}
-
-int	tururu(int i, int n, int m, int k)
-{
-	while (str[i])
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while (str[i] != '\0')
 	{
-		if (str[i] == '-')
+		i++;
+	}
+	while (str[m] == '-' || str[m] == '+' || str[m] == ' ')
+	{
+		if(str[m] == '-')
 			n++;
 		m++;
 	}
-	while (str[m++] <= i)
+	while(m <= i)
 	{
-		if (str[m] >= '0' && str[m] <= '9')
+		if(str[m] >= '0' && str[m] <= '9')
 		{
-			if (k != 0)
+			k += (str[m] - '0');
+			if(str[m + 1] >= '0' && str[m + 1] <= '9')
 				k *= 10;
-			k += str[m] - '0';
 		}
 		else
-			break ;
+		{
+			break;
+		}
+		m++;
 	}
-	if ((n % 2) != 0)
+	if((n % 2) != 0)
 		k *= -1;
 	return (k);
 }
