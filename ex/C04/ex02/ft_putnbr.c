@@ -13,13 +13,27 @@
 
 void	ft_putnbr(int nb)
 {
-	char	a;
-	while(nb>9)
+	char	*a;
+	int	i;
+	
+	if(nb > 0)
 	{
-		a = (nb % 10) + '0';
-		nb /= 10;
-		write(1, &a, 1);
+		nb *= -1;
+		write(1, "-", 1);
 	}
-	a = nb + '0';
-	write(1, &a, 1);
+	while(nb > 9)
+	{
+		*a = (nb % 10) + '0';
+		nb /= 10;
+		a++;
+		i++;
+		
+	}
+	*a = nb + '0';
+	while (i > 0)
+	{
+		write(1, a, 1);
+		a--;
+		i--;
+	}
 }
