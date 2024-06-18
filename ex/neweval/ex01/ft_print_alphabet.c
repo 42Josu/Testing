@@ -18,15 +18,15 @@ void	ft_print_alphabet(void)
 
 	word = 'a';
 	while
-		(word <= 'z');
+		(word <= 'z')
 	{
 		write(1, &word, 1);
 		word++;
 	}
 }
 
-//int	main(void)
-//{
-//	ft_print_alphabet();
-//	return (0);
-//}
+int	main(void)
+{
+	ft_print_alphabet();
+	return (0);
+}
