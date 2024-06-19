@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
@@ -19,21 +21,27 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	i = 0;
 	n = 0;
 	m = 0;
-	while (dest[i])
+	while (dest[i] != '\0')
 		i++;
-	while (src[n])
+	while (src[n] != '\0')
 		n++;
-	if (i > n)
-		while (n > m && m <= size)
-		{
-			dest[i + m] = src[m];
-			m++;
-		}
-	else
-		while (i > m && m <= size)
-		{
-			dest[i + m] = src[m];
-			m++;
-		}
-	return (i + m);
+	while (n >= m && m <= size)
+	{
+		dest[i + m] = src[m];
+		m++;
+	}
+	return ((unsigned int)(i + m));
 }
+/*
+int main ()
+{
+	char *a;
+	char *b;
+	unsigned int c;
+
+	a = "aaas";
+	b = "fge";
+	c = 60;
+	printf("%i", ft_strlcat(a, b, c));
+	return 1;
+}*/

@@ -15,15 +15,26 @@ char	*ft_strstr(char *str, char *to_find)
 	int	i;
 	int	n;
 
-	i = -1;
+	i = 0;
 	n = 0;
-	while (str[i++])
+	while (str[i])
 	{
 		if (str[i] == to_find[0])
 			while (str[i + n] == to_find[n] && to_find[n] != '\0')
 				n++;
 		if (to_find[n] == '\0')
 			return (&str[i]);
+		i++;
 	}
 	return (NULL);
 }
+/*int main ()
+{
+	char *a;
+	char *b;
+
+	a = "hola putos, que tal todo";
+	b = "que";
+	ft_strstr();
+	return 1;
+}*/
