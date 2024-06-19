@@ -19,7 +19,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	i = 0;
 	if (n < 1)
 		return (0);
-	while (s1[i] == s2[i] && n > i)
+	while (s1[i] == s2[i] && n - 1 > i)
 		i++;
 	if (s1[i] && s2[i])
 		return ((int)(s1[i] - s2[i]));
@@ -38,7 +38,7 @@ int	main(void)
 	
 	s1 = "hola";
 	s2 = "holo";
-	n = 6;
+	n = 0;
 	printf("%i", ft_strncmp(s1, s2, n));
 	return (1);
 }*/
