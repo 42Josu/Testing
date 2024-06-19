@@ -7,6 +7,8 @@ int ft_fibonacci(int index)
 	i = 1;
 	k = 0;
 	m = 0;
+	if (index < 0)
+		return (-1);
 	while (i <= index)
 	{
 		if((i + k) == index)
