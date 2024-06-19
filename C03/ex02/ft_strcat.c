@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rares-pe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jenbeita <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 17:38:55 by rares-pe          #+#    #+#             */
-/*   Updated: 2024/06/18 11:45:20 by rares-pe         ###   ########.fr       */
+/*   Created: 2024/06/16 13:35:53 by jenbeita          #+#    #+#             */
+/*   Updated: 2024/06/16 13:42:15 by jenbeita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+char	*ft_strcat(char *dest, char *src)
 {
-	int	word;
+	int	i;
+	int	n;
 
-	word = 'a';
-	while (word <= 'z')
+	i = 0;
+	n = 0;
+	while (dest[i])
+		i++;
+	while (src[n])
 	{
-		write(1, &word, 1);
-		word++;
+		dest[i] = src[n];
+		i++;
+		n++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
