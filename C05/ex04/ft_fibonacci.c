@@ -1,21 +1,18 @@
 int ft_fibonacci(int index)
 {
-	int	i;
-	int	k;
-	int	m;
+	int	i[4];
 
-	i = 1;
-	k = 0;
-	m = 0;
+	i[0] = 1;
+	i[1] = 0;
+	i[2] = 0;
 	if (index < 0)
 		return (-1);
-	while (i <= index)
+	while (i[3] <= index)
 	{
-		if((i + k) == index)
-			return (i + k);
-		m = k;
-		k = i;
-		i = (i + m);
+		i[2] = i[1];
+		i[1] = i[0];
+		i[0] = (i[0] + i[2]);
+		i[3]++;
 	}
 	return (0);
 }
