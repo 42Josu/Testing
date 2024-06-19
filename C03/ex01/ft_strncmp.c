@@ -22,11 +22,16 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	while (s1[i] == s2[i] && n - 1 > i)
 		i++;
 	if (s1[i] && s2[i])
-		return ((int)(s1[i] - s2[i]));
+		if ((s1[i] - s2[i]) > 0)
+			return (+1);
+		else if ((s1[i] - s2[i]) < 0)
+			return (-1);
+		else
+			return (0);
 	else if (s1[i])
-		return ((int)s1[i]);
+		return (+1);
 	else if (s2[i])
-		return (0 - ((int)s2[i]));
+		return (-1);
 	return (0);
 }
 /*
