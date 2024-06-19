@@ -17,7 +17,7 @@ int ft_iterative_factorial(int nb)
 
 	i = 1;
 	f = 1;
-	if(nb <=0)
+	if(nb < 0)
 		return (0);
 	while (i <= nb)
 	{
