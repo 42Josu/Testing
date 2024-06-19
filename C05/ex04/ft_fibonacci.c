@@ -15,5 +15,5 @@ int ft_fibonacci(int index)
 		i[0] = (i[0] + i[2]);
 		i[3]++;
 	}
-	return (i[0]);
+	return (i[1]);
 }
