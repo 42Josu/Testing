@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
@@ -22,8 +24,8 @@ char	*ft_strstr(char *str, char *to_find)
 		if (str[i] == to_find[0])
 			while (str[i + n] == to_find[n] && to_find[n] != '\0')
 				n++;
-		if (to_find[n] == '\0')
-			return (&str[i]);
+		else if (to_find[n] == '\0')
+			return (NULL);
 		i++;
 	}
 	return (NULL);
