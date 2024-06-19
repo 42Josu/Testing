@@ -6,7 +6,7 @@
 /*   By: jenbeita <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 18:22:39 by jenbeita          #+#    #+#             */
-/*   Updated: 2024/06/19 18:22:41 by jenbeita         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:23:40 by jenbeita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int ft_is_prime(int nb)
 	i = 2;
 	if (nb <= 1)
 		return 0;
-	while (i * i <= num)
+	while ((i * i) <= nb)
 	{
-        	if (num % i == 0)
+        	if (nb % i == 0)
 			return 0;
 		i++;
 	}
