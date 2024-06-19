@@ -5,13 +5,12 @@ int ft_recursive_factorial(int nb)
 
 	i = 1;
 	f = 1;
-	while (f <= nb)
+	if(nb < 0)
+		return (0);
+	while (i <= nb)
 	{
 		f *= i;
 		i++;
 	}
-	if (f == nb)
-		return (f);
-	else
-		return (0);
+	return (f);
 }
