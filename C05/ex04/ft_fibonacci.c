@@ -10,7 +10,7 @@ int ft_fibonacci(int index)
 	while (i <= index)
 	{
 		if((i + k) == index)
-			return (i);
+			return (i + k);
 		m = k;
 		k = i;
 		i = (i + m);
