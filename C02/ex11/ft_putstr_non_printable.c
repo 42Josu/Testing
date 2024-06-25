@@ -34,8 +34,9 @@ void	ft_putstr_non_printable(char *str)
 		i++;
 	}
 }
+/*
 int	main(void)
 {
 	ft_putstr_non_printable("r3gewef\nevr");
 	return (1);
-}
+}*/
