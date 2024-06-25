@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Verificar si se proporcionaron dos parámetros
+if [ "$#" -ne 2 ]; then
+    echo "Uso: $0 <direccion_ssh> <carpeta_destino> <ejercicio C0X>"
+    exit 1
+fi
+
+# Almacenar los parámetros en variables
+DIRECCION_SSH=$1
+CARPETA_DESTINO=$RANDOM
+EJERCICIO=$2
+
+# Clonar el repositorio en la carpeta destino
+git clone $DIRECCION_SSH /home/jenbeita/tester2/$CARPETA_DESTINO
+
+# Verificar si el clon fue exitoso
+if [ $? -eq 0 ]; then
+    echo "Clonación exitosa en la carpeta /home/jenbeita/tester2/$CARPETA_DESTINO"
+    cd /home/jenbeita/tester2/$CARPETA_DESTINO
+    rm -rf .git
+	find . -type f -name '*.out' -delete
+	find . -type f -name '*.exe' -delete
+    echo "CNUM" >  $EJERCICIO
+    git add .
+    git commit -m "$RANDOM"
+    git push
+    ssh -t eiren@eiren.studio "cd ~/42/;git pull;cd ~/42/$CARPETA_DESTINO;python3 -m norminette;mini C0$EJERCICIO bash"
+else
+    echo "Error al clonar el repositorio"
+fi
