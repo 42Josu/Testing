@@ -7,7 +7,7 @@ int	main(int argsnum, char **strar)
 	
 	i = 0;
 	n = argsnum - 1;
-	while (n > 1)
+	while (n >= 1)
 	{
 		while (strar[n][i])
 		{

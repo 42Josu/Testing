@@ -24,19 +24,22 @@ char	*ft_strstr(char *str, char *to_find)
 		if (str[i] == to_find[0])
 			while (str[i + n] == to_find[n] && to_find[n] != '\0')
 				n++;
-		else if (to_find[n] == '\0')
-			return (NULL);
+		if (to_find[n] == '\0')
+			return (&str[i]);
 		i++;
 	}
 	return (NULL);
-}
-/*int main () 
+}/*
+int main () 
 {
 	char *a;
 	char *b;
 
-	a = "hola putos, que tal todo";
+	a = "hola qputos, que tal todo";
 	b = "que";
-	ft_strstr();
+	printf("%s", ft_strstr(a, b));
+	a = "hola qputos, que tal todo";
+	b = "quo";
+	printf("%s", ft_strstr(a, b));
 	return 1;
 }*/
