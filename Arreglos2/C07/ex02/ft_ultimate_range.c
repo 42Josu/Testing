@@ -16,10 +16,13 @@ int	ft_ultimate_range(int **range, int min, int max)
 	int	i;
 
 	i = 0;
+	if(max <= min)
+		return (0);
+	else
+		*range = (int *)malloc(max - min);
 	while ((min + i) < max)
 	{
-		a = (char *)malloc(i + 1);
-		a[i] = (min + i);
+		*range[i] = (min + i);
 		i++;
 	}
 	return (a);

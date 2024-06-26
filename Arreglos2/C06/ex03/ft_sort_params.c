@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <limits.h>
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -29,7 +30,7 @@ void anotar(char *a, char *b)
 	int	i;
 	
 	i = 0;
-	while (b[i])
+	while (b[i] != '\0')
 	{
 		a[i] = b[i];
 		i++;
@@ -39,23 +40,23 @@ void anotar(char *a, char *b)
 
 void	obtenersig(char *anterior, char **full, int *h)
 {
-	char	*cercania;
+	int		c;
 	int		cercanum;
 	int		i;
 
 	i = 0;
-	cercanum = 2147483647;
+	cercanum = INT_MIN;
 	while (full[i])
 	{
-		if (ft_strcmp(anterior, full[i]) < cercanum && h[i] != 1)
+		if (ft_strcmp(anterior, full[i]) > cercanum && h[i] != 1)
 		{
-			cercania = &full[i][0];
+			c = i;
 			cercanum = ft_strcmp(anterior, full[i]);
-			h[i] = 1;
 		}
 		i++;
 	}
-	anotar(anterior, cercania);
+	h[c] = 1;
+	anotar(anterior, full[c]);
 }
 
 
@@ -72,16 +73,18 @@ int	strlng(char *n)
 int	main(int argsnum, char **strar)
 {
 	int		i;
-	char	k[256];
+	char	k[2560];
 	int		h[3333];
 
 	i = 1;
 	k[0] = '\0';
+	h[0] = 1;
 	while (i < argsnum)
 	{
 		obtenersig(k, strar, h);
 		i++;
 		write(1, k, strlng(k));
+		write(1, "\n", 1);
 	}
 	return (1);
 }

@@ -18,8 +18,9 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (src[i])
 		i++;
-	tururu = (char *)malloc(i);
-	while (i > 0)
+	tururu = (char *)malloc(i + 1);
+	tururu[i + 1] = '\0';
+	while (i >= 0)
 	{
 		tururu[i] = src[i];
 		i--;
